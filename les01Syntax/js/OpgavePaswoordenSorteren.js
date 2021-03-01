@@ -12,30 +12,26 @@ let paswoorden = [
 'rogier@work',
 'paswoord',
 'MisterNasty12',
-'pwnz0red'
+'pwnz0red' 
 ]; 
 
-console.log(`Alle paswoorden: `); 
-let i  
-let weergegevenPaswoord; 
-for ( i = 0; i < paswoorden.length; i++) {
-    console.log(`${i + 1}. ` + paswoorden[i]); 
-    weergegevenPaswoord = `${i + 1}. ` + paswoorden[i]; 
+console.log("Alle paswoorden: ");  
+for (let i = 0; i < paswoorden.length; i++) { 
+        console.log(`${i+ 1}` + passwoorden[i]);     
 }
-console.log(''); 
 
 let welOk = []; 
 let nietOk = []; 
 
-paswoorden.forEach(pw => {  
-    if (IsCorrectPaswoord(pw)) {
-        welOk.push(pw); 
-    } else {
-        nietOk.push(pw); 
+for(let pw of passwoorden) {
+    if (isCorrectPassword(pw)){
+        welOk.push(pw);
     }
-}); 
+    else{
+        nietOk.push(pw);
+    }
+} 
 
-console.log('Ok: ' + welOk.join(', ')); 
-console.log('Niet ok: ' + nietOk.join(', ')); 
+console.log("Ok: " + welOk.join(", "));
+console.log("Niet ok: "  + nietOk.join(", "));
 
-document.getElementById("Message").innerHTML = weergegevenPaswoord + '' + 'Ok:' + welOk.join(', ') + '' + 'Niet ok: ' + nietOk.join(', '); 
